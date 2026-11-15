@@ -1,0 +1,99 @@
+# ====================================================================
+# Tanmatsu Root .gitignore
+# Rules for Android, Kotlin, Gradle, C/C++, CMake/Ninja, and LLVM builds
+# ====================================================================
+
+# --------------------------------------------------------------------
+# 1. Android Studio & IntelliJ IDEA
+# --------------------------------------------------------------------
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.shelf/
+
+# --------------------------------------------------------------------
+# 2. Gradle & Kotlin Build System
+# --------------------------------------------------------------------
+.gradle/
+build/
+**/build/
+.kotlin/
+*.class
+
+# Explicitly preserve Gradle wrapper files
+!gradlew
+!gradlew.bat
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# --------------------------------------------------------------------
+# 3. Android SDK, NDK & Package Outputs
+# --------------------------------------------------------------------
+local.properties
+*.apk
+*.ap_
+*.aab
+*.dex
+captures/
+.cxx/
+nativeBuild/
+
+# --------------------------------------------------------------------
+# 4. C / C++ Compiler & Native Build Artifacts
+# --------------------------------------------------------------------
+*.o
+*.obj
+*.d
+
+# --------------------------------------------------------------------
+# 5. CMake & Ninja Build Artifacts
+# --------------------------------------------------------------------
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+.ninja_deps
+.ninja_log
+build-*/
+cmake-build-*/
+
+# Explicitly preserve project CMake sources
+!CMakeLists.txt
+!*.cmake
+
+# --------------------------------------------------------------------
+# 6. LLVM Toolchain Cross-Compilation Workstation Dirs
+# --------------------------------------------------------------------
+tanmatsu-build/
+build-host/
+build-target/
+install-android-arm64/
+dist/
+
+# --------------------------------------------------------------------
+# 7. Native Experiment Generated Binaries
+# (Regenerated from C/C++ source code via experiment build scripts)
+# --------------------------------------------------------------------
+/experiments/poc_dynamic_linker/*.so
+/experiments/poc_native_exec/*.so
+/experiments/poc_native_exec/app/src/main/jniLibs/arm64-v8a/*.so
+
+# --------------------------------------------------------------------
+# 8. Operating System & Editor Temporary Files
+# --------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+*.bak
+*.tmp
+*.log
+gradle-error.log
+
+# --------------------------------------------------------------------
+# 9. Repository Structure Preservations
+# --------------------------------------------------------------------
+!.github/workflows/
